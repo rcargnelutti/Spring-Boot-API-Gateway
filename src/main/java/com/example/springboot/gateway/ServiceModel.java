@@ -16,7 +16,7 @@ public class ServiceModel extends RepresentationModel<ServiceModel> implements S
     @GeneratedValue(strategy= GenerationType.AUTO)
     private UUID idService;
     private String name;
-    private String enabled;
+    private Boolean enabled;
     private String port;
     private String host;
     private String path;
@@ -38,11 +38,11 @@ public class ServiceModel extends RepresentationModel<ServiceModel> implements S
         this.name = name;
     }
 
-    public String getEnabled() {
+    public Boolean getEnabled() {
         return enabled;
     }
 
-    public void setEnabled(String enabled) {
+    public void setEnabled(Boolean enabled) {
         this.enabled = enabled;
     }
 

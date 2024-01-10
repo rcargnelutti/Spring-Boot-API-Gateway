@@ -5,5 +5,5 @@ import jakarta.validation.constraints.NotNull;
 
 import java.math.BigDecimal;
 
-public record ServiceRecordDto(@NotBlank String name, String enabled, String port, String host, String path, String protocol) {
+public record ServiceRecordDto(@NotBlank String name, Boolean enabled, String port, String host, String path, String protocol) {
 }

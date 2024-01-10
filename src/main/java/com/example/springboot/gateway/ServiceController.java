@@ -53,8 +53,7 @@ public class ServiceController {
     public ResponseEntity<Object> updateService(@PathVariable(value="id") UUID id, @RequestBody @Valid ServiceRecordDto serviceRecordDto) {
         Optional<ServiceModel> serviceO = serviceRepository.findById(id);
         if(serviceO.isEmpty()) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND)
-                    .body("Service not found.");
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Service not found.");
         }
         var serviceModel = serviceO.get();
         BeanUtils.copyProperties(serviceRecordDto, serviceModel);
